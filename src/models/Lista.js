@@ -1,7 +1,7 @@
 export default class Lista {
-    constructor(id, nome, itens = []) {
+    constructor(id, titulo, itens = []) {
       this.id = id;
-      this.nome = nome;
+      this.titulo = titulo;
       this.itens = itens; // Array de objetos do tipo Item
     }
 
