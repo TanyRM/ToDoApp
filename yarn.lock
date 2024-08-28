@@ -1427,8 +1427,10 @@
 "@react-native/eslint-plugin@0.75.2":
   version "0.75.2"
 
-"@react-native/gradle-plugin@0.75.2":
+"@react-native/gradle-plugin@^0.75.2", "@react-native/gradle-plugin@0.75.2":
   version "0.75.2"
+  resolved "https://registry.npmjs.org/@react-native/gradle-plugin/-/gradle-plugin-0.75.2.tgz"
+  integrity sha512-AELeAOCZi3B2vE6SeN+mjpZjjqzqa76yfFBB3L3f3NWiu4dm/YClTGOj+5IVRRgbt8LDuRImhDoaj7ukheXr4Q==
 
 "@react-native/js-polyfills@0.75.2":
   version "0.75.2"

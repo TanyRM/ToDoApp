@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import ListaItem from '../components/ListaItem';
 import BotaoCriar from '../components/BotaoCriar';
-import { cumprimentarUsuario } from '../utils/timeUtils';
+import { cumprimentarUsuario } from '../utils/Cumprimento';
 import { criarNovaLista, excluirLista } from '../services/listaService';
-import styles from '../styles/homeStyles';
+import styles from '../styles/HomeStyles';
 import Lista from '../models/Lista';
 
 const HomeScreen = ({ navigation }) => {

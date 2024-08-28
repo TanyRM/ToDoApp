@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const Lista = ({ item, onPress, onDelete, styles }) => (
+const ListaItem = ({ item, onPress, onDelete, styles }) => (
   <View style={styles.listaItem}>
     <TouchableOpacity onPress={onPress}>
       <Text style={styles.listaTitulo}>{item.titulo}</Text>
@@ -12,4 +12,4 @@ const Lista = ({ item, onPress, onDelete, styles }) => (
   </View>
 );
 
-export default Lista;
+export default ListaItem;
