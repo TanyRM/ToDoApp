@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from 'react-native';
 
 const BotaoCriar = ({ onPress, styles }) => (
   <TouchableOpacity style={styles.botaoCriar} onPress={onPress}>
-    <Text style={styles.textoBotaoCriar}>+ Criar Nova Lista</Text>
+    <Text style={styles.textoBotaoCriar}>+ Nova Lista</Text>
   </TouchableOpacity>
 );
 

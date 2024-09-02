@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, FlatList} from 'react-native';
 import ListaItem from '../components/ListaItem';
 import BotaoCriar from '../components/BotaoCriar';
-import { cumprimentarUsuario } from '../utils/Cumprimento';
-import { criarNovaLista, excluirLista } from '../services/listaService';
+import {cumprimentarUsuario} from '../utils/Cumprimento';
+import {excluirLista} from '../services/listaService';
 import styles from '../styles/HomeStyles';
 import Lista from '../models/Lista';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({navigation}) => {
   const [listas, setListas] = useState([
-    new Lista('1', 'Compras'),
+    new Lista('1', 'Compras', ['Arroz', 'Feijão', 'Macarrão']),
     new Lista('2', 'Trabalho'),
     new Lista('3', 'Estudos'),
   ]);
@@ -24,14 +24,17 @@ const HomeScreen = ({ navigation }) => {
         renderItem={({ item }) => (
           <ListaItem
             item={item}
-            onPress={() => navigation.navigate('DetalhesLista', { id: item.id })}
+            onPress={() => navigation.navigate('DetalhesLista', { lista: item })}
             onDelete={() => excluirLista(item.id, listas, setListas)}
             styles={styles}
           />
         )}
       />
 
-      <BotaoCriar onPress={() => criarNovaLista(listas, setListas)} styles={styles} />
+      <BotaoCriar
+        onPress={() => navigation.navigate('NovaLista', {setListas})}
+        styles={styles}
+      />
     </View>
   );
 };
