@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}) => {
         renderItem={({ item }) => (
           <ListaItem
             item={item}
-            onPress={() => navigation.navigate('DetalhesLista', { lista: item })}
+            onPress={() => navigation.navigate('Detalhes', { lista: item })}
             onDelete={() => excluirLista(item.id, listas, setListas)}
             styles={styles}
           />
@@ -32,7 +32,7 @@ const HomeScreen = ({navigation}) => {
       />
 
       <BotaoCriar
-        onPress={() => navigation.navigate('NovaLista', {setListas})}
+        onPress={() => navigation.navigate('Criar lista', {setListas})}
         styles={styles}
       />
     </View>

@@ -6,19 +6,19 @@ import styles from '../styles/CreateStyles';
 const NovaListaScreen = ({ navigation, route }) => {
   const [titulo, setTitulo] = useState('');
   const [itens, setItens] = useState('');
-  const { setListas } = route.params; // Obtém a função para atualizar a lista da HomeScreen
+  const { setListas } = route.params; 
 
   const handleSalvarLista = () => {
     const novaLista = new Lista(Date.now().toString(), titulo, itens.split(',').map(item => item.trim()));
     setListas(prevListas => [...prevListas, novaLista]);
-    navigation.navigate('DetalhesLista', { lista: novaLista });
+    navigation.navigate('Detalhes', { lista: novaLista });
   };
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Digite o título da nova lista"
+        placeholder="Digite o título da lista"
         value={titulo}
         onChangeText={setTitulo}
       />

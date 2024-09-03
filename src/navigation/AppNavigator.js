@@ -11,8 +11,8 @@ const AppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="DetalhesLista" component={ListaDetalhesScreen} />
-      <Stack.Screen name="NovaLista" component={NovaListaScreen} />
+      <Stack.Screen name="Detalhes" component={ListaDetalhesScreen} />
+      <Stack.Screen name="Criar lista" component={NovaListaScreen} />
     </Stack.Navigator>
   );
 };
