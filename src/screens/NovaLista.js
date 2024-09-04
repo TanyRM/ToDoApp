@@ -6,7 +6,7 @@ import styles from '../styles/CreateStyles';
 const NovaListaScreen = ({ navigation, route }) => {
   const [titulo, setTitulo] = useState('');
   const [itens, setItens] = useState('');
-  const { setListas } = route.params; 
+  const { setListas } = route.params;
 
   const handleSalvarLista = () => {
     const novaLista = new Lista(Date.now().toString(), titulo, itens.split(',').map(item => item.trim()));
@@ -29,6 +29,8 @@ const NovaListaScreen = ({ navigation, route }) => {
         onChangeText={setItens}
       />
       <Button title="Salvar" onPress={handleSalvarLista} />
+  
+      <Button title="Cancelar" onPress={()=>navigation.navigate('Home')} />
     </View>
   );
 };
