@@ -4,7 +4,7 @@ export default class User {
         this.listas = listas;
     }
 
-    adicionarLista(lista){
+    adicionarLista(lista) {
         this.listas.push(lista);
     }
 
@@ -13,6 +13,6 @@ export default class User {
 
         if (index > -1) {
             this.listas.splice(index, 1);
-          }
+        }
     }
 }

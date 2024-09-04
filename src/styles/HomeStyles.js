@@ -25,10 +25,13 @@ export default StyleSheet.create({
     color: 'red',
   },
   botaoCriar: {
+    width: 70,
+    height: 70,
     backgroundColor: '#007bff',
-    padding: 16,
+    padding: 10,
+    justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 100,
     marginTop: 20,
   },
   textoBotaoCriar: {

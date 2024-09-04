@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, FlatList } from 'react-native';
 import ListaItem from '../components/ListaItem';
 import BotaoCriar from '../components/BotaoCriar';
-import {cumprimentarUsuario} from '../utils/Cumprimento';
-import {excluirLista} from '../services/listaService';
+import { cumprimentarUsuario } from '../utils/Cumprimento';
+import { excluirLista } from '../services/listaService';
 import styles from '../styles/HomeStyles';
 import Lista from '../models/Lista';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const [listas, setListas] = useState([
     new Lista('1', 'Compras', ['Arroz', 'Feijão', 'Macarrão']),
     new Lista('2', 'Trabalho'),
@@ -32,7 +32,7 @@ const HomeScreen = ({navigation}) => {
       />
 
       <BotaoCriar
-        onPress={() => navigation.navigate('Criar lista', {setListas})}
+        onPress={() => navigation.navigate('Criar lista', { setListas })}
         styles={styles}
       />
     </View>
