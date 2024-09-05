@@ -4,31 +4,31 @@ import styles from '../styles/DetalhesStyles';
 import Item from '../models/Item';
 import CreateStyles from '../styles/CreateStyles';
 
-const ListaDetalhesScreen = ({ navigation, route }) => {
-  const { lista } = route.params; // Obtém a lista passada como parâmetro
+const ListaDetalhesScreen = ({ route }) => {
+  const { lista } = route.params;
   const [descricao, setDescricao] = useState('');
   const [itens, setItens] = useState([]);
 
-  // Inicializa os itens da lista ao carregar a tela
   useEffect(() => {
     if (lista?.itens) {
-      setItens([...lista.itens]); // Inicializa o estado com os itens existentes da lista
+      setItens([...lista.itens]);
     }
   }, [lista]);
 
   const handleSalvarItem = () => {
     if (descricao.trim().length === 0) {
-      alert('Por favor, digite uma descrição para o item.');
+      // eslint-disable-next-line no-alert
+      alert('Por favor, insira um item.');
       return;
     }
 
-    const novoItem = new Item(Date.now().toString(), descricao); // Cria um novo item
-    lista.adicionarItem(novoItem); // Adiciona o item à lista
-    setItens([...lista.itens]); // Atualiza o estado com a nova lista de itens
-    setDescricao(''); // Limpa o campo de texto
+    const novoItem = new Item(Date.now().toString(), descricao);
+    lista.adicionarItem(novoItem);
+    setItens([...lista.itens]);
+    setDescricao('');
 
     console.log('Novo item adicionado:', novoItem);
-    console.log('Itens após adição:', lista.itens); // Verifica o conteúdo da lista após adição
+    console.log('Itens após adição:', lista.itens);
   };
 
   return (
@@ -37,9 +37,9 @@ const ListaDetalhesScreen = ({ navigation, route }) => {
 
       <FlatList
         data={itens}
-        keyExtractor={(item, index) => (item?.id ? item.id.toString() : index.toString())} // Verifica se item e item.id existem
+        keyExtractor={(item, index) => (item?.id ? item.id.toString() : index.toString())}
         renderItem={({ item }) => (
-          <Text style={styles.item}>{item.descricao}</Text> // Exibe a descrição do item
+          <Text style={styles.item}>{item.descricao}</Text>
         )}
       />
 

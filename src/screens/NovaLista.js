@@ -9,7 +9,10 @@ const NovaListaScreen = ({ navigation, route }) => {
   const { setListas } = route.params;
 
   const handleSalvarLista = () => {
-    const novaLista = new Lista(Date.now().toString(), titulo, itens.split(',').map(item => item.trim()));
+    // Verifica se a entrada de itens não está vazia
+    const itensArray = itens.trim() ? itens.split(',').map(item => item.trim()) : [];
+
+    const novaLista = new Lista(Date.now().toString(), titulo, itensArray);
     setListas(prevListas => [...prevListas, novaLista]);
     navigation.navigate('Detalhes', { lista: novaLista });
   };
@@ -29,8 +32,8 @@ const NovaListaScreen = ({ navigation, route }) => {
         onChangeText={setItens}
       />
       <Button title="Salvar" onPress={handleSalvarLista} />
-  
-      <Button title="Cancelar" onPress={()=>navigation.navigate('Home')} />
+
+      <Button title="Cancelar" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
