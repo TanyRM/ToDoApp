@@ -6,10 +6,15 @@ import { cumprimentarUsuario } from '../utils/Cumprimento';
 import { excluirLista } from '../services/listaService';
 import styles from '../styles/HomeStyles';
 import Lista from '../models/Lista';
+import Item from '../models/Item';
 
 const HomeScreen = ({ navigation }) => {
   const [listas, setListas] = useState([
-    new Lista('1', 'Compras', ['Arroz', 'Feijão', 'Macarrão']),
+    new Lista('1', 'Compras', [
+      new Item('1', 'Arroz'),
+      new Item('2', 'Feijão'),
+      new Item('3', 'Macarrão'),
+    ]),
     new Lista('2', 'Trabalho'),
     new Lista('3', 'Estudos'),
   ]);
