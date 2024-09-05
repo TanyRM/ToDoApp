@@ -13,8 +13,8 @@ export default StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 10,
   },
-  cancelarButton: {
-    flex: 1,
-    backgroundColor: '#cc0d00',
-  }
+  buttonContainer: {
+    marginTop: 16,
+    justifyContent: 'space-between',
+  },
 });
